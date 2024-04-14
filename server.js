@@ -11,7 +11,8 @@ const userRouter = require("./routes/user");
 const reviewRouter = require("./routes/review");
 const gameRouter = require("./routes/game");
 const mongooseEndpoint =
-	process.env.MONGODB_URI || "mongodb://127.0.0.1/gamiew_app";
+	process.env.MONGODB_URI ||
+	"mongodb+srv://devshaffan:sPEAsBbyCNQBWDTY@cluster0.udmt5pt.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
 
 mongoose.connect(mongooseEndpoint, { useNewUrlParser: true });
 
@@ -30,7 +31,8 @@ app.use(cookieParser()); //parse cookie into useful data
 
 app.use(
 	cors({
-		origin: "*",
+		origin: true,
+		credentials: true,
 	})
 );
 
